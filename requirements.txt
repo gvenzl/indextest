@@ -1,2 +1,0 @@
-mysql-connector-python >= 1.0.0
-Ctx_Oracle >= 5.1.3
