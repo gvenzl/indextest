@@ -13,6 +13,8 @@ For further explanation on explain plans and their format look at:
 
 ## Examples 
 ### MySQL
+The MySQL example is built upon the [MySQL Sakila Sample Database](http://dev.mysql.com/doc/sakila/en/)
+
     $ ./example.py
     Test: Simple test
     Query: SELECT * FROM actor WHERE first_name='Tom'
@@ -42,6 +44,8 @@ For further explanation on explain plans and their format look at:
     Tested 4 queries, Pass: 3, Fail: 1
 
 ### Oracle
+The Oracle example is built upon the [Oracle Database Examples package](https://github.com/gvenzl/db-sample-schemas)
+
     $ ./example.py
     Test: Simple test on OPERATION
     Query: SELECT first_name, last_name FROM employees WHERE employee_id=1
