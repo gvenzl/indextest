@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/local/bin/python3
 import pprint
 import inspect
 import json
@@ -51,12 +51,12 @@ class IndexTest:
             pprint.pprint(self.query)
         cur = self.con.cursor()
         if self.dbtype == 'oracle':
-            stmtId = getrandbits(30) # Generate statement Id for explain plan
-            cur.execute("EXPLAIN PLAN SET STATEMENT_ID='" + str(stmtId) + "' FOR " + self.query)
+            stmtId = str(getrandbits(30)) # Generate statement Id for explain plan
+            cur.execute("EXPLAIN PLAN SET STATEMENT_ID = '" + stmtId + "' FOR " + self.query) # No bind variables for DDL statements
             cur.execute("SELECT *" +
                           " FROM plan_table" +
-                          " WHERE statement_id = '" + str(stmtId) + "'"+
-                          " ORDER BY id")
+                          " WHERE statement_id = :1"+
+                          " ORDER BY id", (stmtId,))
         elif self.dbtype == 'mysql':
             cur.execute("EXPLAIN FORMAT=TRADITIONAL " + self.query)
         self.result = self._rows_to_dict_list(cur)
