@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/local/bin/python3
 import indextest
 
 # MySQL example
@@ -42,9 +42,9 @@ class testerOracle(indextest.IndexTester):
     def __init__(self):
         dbparams = { 'user': 'hr',
                      'password': 'hr',
-                     'host': 'gvenzl-virtual',
+                     'host': 'localhost',
                      'port': '1521',
-                     'database': 'test'}
+                     'database': 'ORCLPDB1'}
         self.dbparams = dbparams
         self.dbtype = 'oracle'
 
