@@ -1,4 +1,4 @@
-#Index Tester
+# Index Tester
 Index Tester is a tool that allows you to unit test your indexes. It supports both, Oracle RDBMS as well as MySQL RDBMS.
 It uses the explain plan facility to examine whether your index is used for the statement.
 For further explanation on explain plans and their format look at:
